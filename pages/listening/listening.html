@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jerry's Journal</title>
+  <link rel="stylesheet" href="listening.css" />
+</head>
+<body>
+
+  <!-- Cartoon Stickers / Figurines -->
+  <img src="/images/tom-left.png" class="figurine tom" />
+  <img src="/images/jerry-right.png" class="figurine jerry" />
+
+  <!-- Main Journal Container -->
+  <div class="container">
+    <h1>🧀 Jerry's Journal</h1>
+    <p>Type your thoughts... they’ll be autosaved to the cloud ☁️</p>
+
+    <textarea id="note" placeholder="Dear Diary..."></textarea>
+    <div id="status">🕓 Waiting for input...</div>
+  </div>
+
+  <!-- Firebase Save Logic -->
+  <script type="module">
+    import { db, collection, addDoc, serverTimestamp } from './firebase.js';
+
+    const noteInput = document.getElementById("note");
+    const status = document.getElementById("status");
+    let timeout;
+
+    noteInput.addEventListener("input", () => {
+      clearTimeout(timeout);
+      timeout = setTimeout(async () => {
+        const note = noteInput.value.trim();
+        if (note) {
+          try {
+            await addDoc(collection(db, "journal"), {
+              text: note,
+              timestamp: serverTimestamp()
+            });
+            status.textContent = "✅ Saved to Firebase!";
+            noteInput.value = '';
+          } catch (err) {
+            console.error("Error saving:", err);
+            status.textContent = "❌ Failed to save!";
+          }
+        }
+      }, 1000);
+    });
+  </script>
+  
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tom & Jerry Zone</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Glassmorphism Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#memory-box">Memory Box</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO CAROUSEL -->
+  <section class="carousel" id="hero">
+    <div class="slides">
+      <img src="images/tom1.jpg" class="slide" />
+      <img src="images/jerry1.jpg" class="slide" />
+      <img src="images/tomjerry3.jpg" class="slide" />
+    </div>
+  </section>
+
+  <!-- ABOUT US SECTION -->
+  
+  <section class="about" id="about">
+    <h2 class="about-title">👬 About Us</h2>
+  
+    <div class="about-block tom-block">
+      <img src="images/tom.jpg" alt="Tom">
+      <div class="about-text">
+        <h3>Tom (Me)</h3>
+        <p>The smart one. Always scheming, chasing, and occasionally vibing... mostly failing but in style 😄</p>
+      </div>
+    </div>
+
+    <div class="about-block jerry-block">
+      <div class="about-text">
+        <h3>Jerry (My Bro)</h3>
+        <p>The clever little troublemaker 🧀 Always one step ahead, and somehow, always escaping with cheese in hand.</p>
+      </div>
+      <img src="images/jerry.jpg" alt="Jerry">
+    </div>
+
+    <p class="duo-note">Together, we are a chaotic but iconic duo. This site? It's our little fun-corner for everything from memories to madness.</p>
+  </section>
+
+
+  <!-- INTERACTIVE CARDS -->
+  <section class="cards-section">
+    <div class="card" onclick="location.href='pages/study/study.html'">
+      <h3>Study Guide</h3>
+    </div>
+    <div class="card" onclick="location.href='pages/listening/listening.html'">
+      <h3>Listening</h3>
+    </div>
+    <div class="card" onclick="location.href='pages/gaming.html'">
+      <h3>Gaming</h3>
+    </div>
+  </section>
+
+  <!-- MEMORY BOX -->
+  <section class="memory-box" id="memory-box">
+    <h2>📸 Memory Box</h2>
+    <div class="collage-container">
+      <button onclick="prevCollage()">◀</button>
+      <div class="collages" id="collages">
+        <!-- Collage 1 -->
+        <div class="collage">
+          <img src="images/mem1.jpg" onclick="popupImage(this)" />
+          <img src="images/mem2.jpg" onclick="popupImage(this)" />
+          <img src="images/mem3.jpg" onclick="popupImage(this)" />
+        </div>
+        <!-- Collage 2 -->
+        <div class="collage">
+          <img src="images/mem4.jpg" onclick="popupImage(this)" />
+          <img src="images/mem5.jpg" onclick="popupImage(this)" />
+          <img src="images/mem6.jpg" onclick="popupImage(this)" />
+        </div>
+        <!-- Collage 3 -->
+        <div class="collage">
+          <img src="images/mem7.jpg" onclick="popupImage(this)" />
+          <img src="images/mem8.jpg" onclick="popupImage(this)" />
+          <img src="images/mem9.jpg" onclick="popupImage(this)" />
+        </div>
+      </div>
+      <button onclick="nextCollage()">▶</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+  <footer class="footer">
+    <p>Made with ❤️ by Tom & Jerry | Stay silly, stay smart 😸🧀</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,268 @@
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: #fff3e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+/* Glassmorphism Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15px);
+  padding: 1rem 2rem;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  margin: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #ff6f00;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #fff;
+  background: #ffab40;
+}
+
+/* HERO CAROUSEL */
+.carousel {
+  overflow: hidden;
+  height: 300px;
+  width: 100%;
+  margin-top: 5rem;
+}
+
+.slides {
+  display: flex;
+  animation: slide 9s infinite;
+}
+
+.slide {
+  width: 100vw;
+  height: 300px;
+  object-fit: cover;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  33% { transform: translateX(-100vw); }
+  66% { transform: translateX(-200vw); }
+  100% { transform: translateX(0); }
+}
+
+/* ABOUT US SECTION */
+.about {
+  padding: 3rem 1rem;
+  background: #fffde7;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-title {
+  font-size: 2rem;
+  color: #ff6f00;
+  margin-bottom: 2rem;
+}
+
+.about-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 900px;
+  width: 100%;
+  margin-bottom: 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.about-block img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.about-block:hover img {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+.about-text {
+  max-width: 500px;
+  font-size: 1rem;
+  color: #5d4037;
+  text-align: left;
+}
+
+.about-text h3 {
+  color: #ef6c00;
+  margin-bottom: 0.5rem;
+}
+
+.tom-block img {
+  order: 0;
+}
+.jerry-block img {
+  order: 1;
+}
+
+.duo-note {
+  max-width: 700px;
+  font-size: 1.1rem;
+  color: #ff6f00;
+  text-align: center;
+}
+
+/* INTERACTIVE CARDS */
+.cards-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 2rem;
+  width: 100%;
+  gap: 1.5rem;
+}
+
+.card {
+  width: 250px;
+  height: 150px;
+  background-color: #ffe0b2;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  background-color: #ffcc80;
+}
+
+/* MEMORY BOX */
+.memory-box {
+  padding: 2rem;
+  background: #fff8e1;
+  text-align: center;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.memory-box h2 {
+  font-size: 2rem;
+  color: #ff6f00;
+  margin-bottom: 1rem;
+}
+
+.collage-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.collages {
+  display: flex;
+  overflow: hidden;
+  width: 70%;
+}
+
+.collage {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.collage img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.collage img:hover {
+  transform: scale(1.1);
+}
+
+/* Buttons */
+button {
+  background: #ffcc80;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 0 20px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #ffab40;
+}
+.footer{
+  padding: auto;
+  color: #ffab40;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-block {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .cards-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%;
+  }
+
+  .collages {
+    width: 90%;
+  }
+}

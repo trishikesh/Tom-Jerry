@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Study Guide - Tom & Jerry Zone</title>
+  <link rel="stylesheet" href="study.css" />
+</head>
+<body>
+
+    <header class="header">
+        <h1>📘 Tom's Study Guide</h1>
+    </header>
+      
+
+  <main class="container">
+    <!-- Python -->
+    <section class="topic" id="python">
+      <h2>🐍 Python</h2>
+      <p><strong>What is it?</strong> Beginner-friendly language used for web dev, AI, and more.</p>
+      <p><strong>Libraries:</strong> NumPy, Pandas, Flask, Django</p>
+      <ul>
+        <li><a href="https://www.w3schools.com/python/" target="_blank">W3Schools Python</a></li>
+        <li><a href="https://realpython.com/" target="_blank">Real Python</a></li>
+        <li><a href="https://www.youtube.com/watch?v=_uQrJ0TkZlc" target="_blank">YT Tutorial</a></li>
+      </ul>
+      <div class="progress">
+        <label><input type="radio" name="python-progress" value="not-started"> Not Started</label>
+        <label><input type="radio" name="python-progress" value="in-progress"> In Progress</label>
+        <label><input type="radio" name="python-progress" value="finished"> Finished</label>
+      </div>
+    </section>
+
+    <!-- Physics -->
+    <section class="topic" id="physics">
+      <h2>🔬 Physics (CBSE 12)</h2>
+      <p>Concepts like electromagnetism, optics, waves, and modern physics. Numericals are key!</p>
+      <ul>
+        <li><a href="https://www.learncbse.in/cbse-class-12-physics-notes/" target="_blank">CBSE Notes</a></li>
+        <li><a href="https://www.youtube.com/watch?v=od6xGvNf7aA" target="_blank">1 Shot Revision</a></li>
+      </ul>
+      <div class="progress">
+        <label><input type="radio" name="physics-progress" value="not-started"> Not Started</label>
+        <label><input type="radio" name="physics-progress" value="in-progress"> In Progress</label>
+        <label><input type="radio" name="physics-progress" value="finished"> Finished</label>
+      </div>
+    </section>
+
+    <!-- Chemistry -->
+    <section class="topic" id="chemistry">
+      <h2>⚗️ Chemistry (CBSE 12)</h2>
+      <p>Focus on organic reactions, NCERT line-by-line reading & practice is a must.</p>
+      <ul>
+        <li><a href="https://byjus.com/cbse-notes/class-12-chemistry-notes/" target="_blank">CBSE Chemistry Notes</a></li>
+        <li><a href="https://www.youtube.com/watch?v=RpvsxJgq03E" target="_blank">Organic Chemistry Crash Course</a></li>
+      </ul>
+      <div class="progress">
+        <label><input type="radio" name="chemistry-progress" value="not-started"> Not Started</label>
+        <label><input type="radio" name="chemistry-progress" value="in-progress"> In Progress</label>
+        <label><input type="radio" name="chemistry-progress" value="finished"> Finished</label>
+      </div>
+    </section>
+
+    <!-- Maths -->
+    <section class="topic" id="maths">
+      <h2>📐 Maths (CBSE 12)</h2>
+      <p>Practice calculus, probability, matrices, and application-based questions regularly.</p>
+      <ul>
+        <li><a href="https://www.topperlearning.com/study/cbse/class-12/mathematics/b105" target="_blank">TopperLearning Maths</a></li>
+        <li><a href="https://www.youtube.com/watch?v=HrhUuX2I1gk" target="_blank">YT One-Shot Maths</a></li>
+      </ul>
+      <div class="progress">
+        <label><input type="radio" name="maths-progress" value="not-started"> Not Started</label>
+        <label><input type="radio" name="maths-progress" value="in-progress"> In Progress</label>
+        <label><input type="radio" name="maths-progress" value="finished"> Finished</label>
+      </div>
+    </section>
+
+    <!-- JEE One Shots -->
+    <section class="topic" id="jee-one-shot">
+      <h2>🚀 JEE One-Shot Revisions</h2>
+      <p>Revise full chapters in a single video – saves time & boosts memory.</p>
+      <ul>
+        <li><a href="https://www.youtube.com/playlist?list=PLjpp5kBQLNTSnf1Q9HRgwcFZkGfDoWbId" target="_blank">Physics Wallah One Shots</a></li>
+        <li><a href="https://www.youtube.com/@vedantujee" target="_blank">Vedantu JEE YouTube</a></li>
+      </ul>
+      <div class="progress">
+        <label><input type="radio" name="jee-one-shot-progress" value="not-started"> Not Started</label>
+        <label><input type="radio" name="jee-one-shot-progress" value="in-progress"> In Progress</label>
+        <label><input type="radio" name="jee-one-shot-progress" value="finished"> Finished</label>
+      </div>
+    </section>
+
+    <!-- JEE Practice -->
+    <section class="topic" id="jee-practice">
+      <h2>🧠 JEE Practice Questions</h2>
+      <p>Topic-wise & mock practice – aim for speed + accuracy 💯</p>
+      <ul>
+        <li><a href="https://www.embibe.com/exams/jee-main-mock-test/" target="_blank">Embibe Practice</a></li>
+        <li><a href="https://practice.geeksforgeeks.org/courses/jee" target="_blank">GFG JEE Practice</a></li>
+      </ul>
+      <div class="progress">
+        <label><input type="radio" name="jee-practice-progress" value="not-started"> Not Started</label>
+        <label><input type="radio" name="jee-practice-progress" value="in-progress"> In Progress</label>
+        <label><input type="radio" name="jee-practice-progress" value="finished"> Finished</label>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const radios = document.querySelectorAll('input[type="radio"]');
+    radios.forEach(radio => {
+      const topic = radio.name;
+      const saved = localStorage.getItem(topic);
+      if (saved === radio.value) {
+        radio.checked = true;
+      }
+      radio.addEventListener('change', () => {
+        localStorage.setItem(topic, radio.value);
+      });
+    });
+  </script>
+  
+
+</body>
+</html>
